@@ -1,1 +1,70 @@
-<h1>News</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>News</title>
+        <style>
+            body{
+                margin:0;
+                padding: 0;
+                background-image: url('https://1.bp.blogspot.com/-bV7muvG9L0Q/XtdVwYsVjOI/AAAAAAAAALc/kN_zLCGgXPEPMDiy0FpwY9JBsCjurcPZgCEwYBhgLKssDAL1OcqzpvsaRvosRCMctftMqs9pJn-fj7QXLKcP3vm6NJSX-YFQbrjGMy9X-92EGXehBesZLH1rRTklSMB7P6qudE-p1-xeHzGesWpo4jTDKOd--R-muG-JNXdAplnFRvfuQYK36baaxxZ7W4rFAMpIZOpv-hLAVYsx7_dzNrU9RWa6ZA7ssdKEl4BwMLJYAwt7DvwfH81OjVd4HKX0US2rpcA_cXIw9rE2hihZVsjiIcoY8TcsqUpNcrzeNxDRg0td4oPuJw8tUxg_W1Gfi0GvZZ3B9Eg1wbJxN_uDusGVcCgLeLC1wY7jP4_3ZK7lkAjrwr6FxPFBsgeyJ23zEqam1xcRG4ZfEvGj0v1EBI7tESkHP0-tXk7LZk6W_mQmXLfYtQbC-QcjBOQHUfy2g5Kpt-GKO0I8al5wyBvm58X7epSt1cXS6wMjXyUXji8XwdY5c0FHKSAUUX-mZRAS9zOuiPU6X3Xhf--enSk1w_UQchrw6KMp7preglizfNkbhLswlddRiV3H38sIH22g5sCEmmYpUpJAL8fmYEgw1ztaxYaNIFlaLMW2g68TLDD6Ai5xfm5pYQk7VEmRVnPQcFb4rZf4mdIwUbHp1MO2w3fYF/s1600/newspaper-background.jpg');
+            }
+      header{
+          background-color: gray;
+          padding:5px;
+          text-align: center;
+          text-transform: uppercase;
+      }
+            div{
+                padding:0 100px;
+                margin:50px;
+            }
+            li{
+                padding: 10px 20px;
+                background-color: whitesmoke;
+                list-style: none;
+                border-radius: 0.5%;
+            }
+            button{
+                margin: 10px;
+                padding: 5px;
+                border-radius: 10%;
+                background: gray;
+                cursor: pointer;
+            }
+            a{
+              text-decoration: none; 
+              color: black;
+            }
+            .one h1{
+                font-weight: bold;
+                font-style: italic;
+                text-align: center;
+                text-transform: uppercase;
+                text-shadow: 2px 2px teal;
+                /* background-color: whitesmoke; */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+    <h1>News</h1>
+    </header>
+    <div class="one">
+    <h1>Top Headlines</h1>
+    </div>
+{% for item in data %}
+<div>
+    <li>
+    {{item.news_source.name}}<br>
+    {{item.news_title}}<hr>
+   Written by {{item.news_author}}<br>
+    
+    {{item.news_description}}<br> 
+
+    <button ><a href="{{item.news_url}}">View Article</a></button>
+</li>
+</div>
+{%endfor%}
+    </body>
+</html>
