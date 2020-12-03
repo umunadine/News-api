@@ -1,5 +1,7 @@
 # News-api
 an application that  helps list and preview news articles from various sources.   
+## Live link
+https://newsapi0.herokuapp.com/
 ## Author
 It was written by Umutesi Nadine
 ## Description
